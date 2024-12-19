@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Azul claro */
+    color: #333333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Barra de navegación */
+.navbar {
+    background-color: #0099cc; /* Azul celeste intenso */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #ffcc00; /* Amarillo claro para resaltar */
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Botones */
+button {
+    background-color: #0099cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #007399; /* Azul más oscuro al pasar el cursor */
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form input:focus {
+    border-color: #0099cc;
+    outline: none;
+}
+
+/* Tarjetas de doctores */
+.doctor-card {
+    display: inline-block;
+    background-color: #f0f8ff;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    width: 220px;
+    margin: 10px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.doctor-card h3 {
+    color: #0099cc;
+    font-size: 1.2rem;
+}
+
+.doctor-card p {
+    font-size: 0.9rem;
+    color: #666666;
+}
+
+.doctor-card button {
+    margin-top: 10px;
+}
+
+/* Mensaje de advertencia */
+.alert {
+    color: white;
+    background-color: #ff6666; /* Rojo claro */
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Mensajes vacíos */
+.no-citas {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666666;
+    padding: 20px;
+}

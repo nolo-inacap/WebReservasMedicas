@@ -1,0 +1,90 @@
+        /* Estilos similares a los anteriores */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Azul claro */
+            color: #333333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Barra de navegación */
+        .navbar {
+            background-color: #0099cc; /* Azul celeste intenso */
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #ffcc00; /* Amarillo claro para resaltar */
+        }
+
+        /* Contenedor de citas */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .cita {
+            margin: 15px 0;
+            padding: 15px;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+            background-color: #f0f8ff;
+        }
+
+        .cita h2 {
+            font-size: 1.2rem;
+            color: #0099cc;
+        }
+
+        .cita p {
+            font-size: 1rem;
+            color: #666666;
+        }
+
+        /* Botón de volver */
+        .volver-btn {
+            background-color: #0099cc;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .volver-btn:hover {
+            background-color: #007399;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        form input {
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }

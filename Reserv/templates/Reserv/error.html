@@ -1,0 +1,48 @@
+{% block content %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    h1 {
+        color: #e74c3c;
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        color: #555;
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    a {
+        color: #3498db;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<div class="container">
+    <h1>Error de Reserva</h1>
+    <p>{{ message }}</p>
+    <p><a href="{% url 'home' %}">Volver al inicio</a></p>
+</div>
+{% endblock %}

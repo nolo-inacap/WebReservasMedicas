@@ -1,0 +1,19 @@
+body {
+    background-color: white;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+h1 {
+    color: #008000; /* Verde para éxito */
+}
+a {
+    color: #00aaff; /* Celeste para el enlace */
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.container {
+    text-align: center;
+    margin-top: 50px;
+}

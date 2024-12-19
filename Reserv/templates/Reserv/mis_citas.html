@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mis Citas</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/stylesCita.css' %}">
+</head>
+<body>
+    <div class="navbar">
+        <h1>Mis Citas</h1>
+        <a href="{% url 'home' %}">Volver al inicio</a>
+    </div>
+    
+    <div class="container">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center;"></div>
+            {% if mensaje %}
+                <p>{{ mensaje }}</p>
+            {% else %}
+                <h2>Estas son tus citas reservadas:</h2>
+                {% for cita in citas %}                    
+                    <div class="cita">
+                        <img src="{{ cita.doctor.picture }}" alt="Foto de {{ cita.doctor.name }}" class="doctor-image" style="width: 30%; height: 30%;">
+                        <h2>Doctor: {{ cita.doctor.name }}</h2>
+                        <p><strong>Especialidad: {{ cita.doctor.special }}</strong></p>
+                        <p><strong>Horario:</strong> {{ cita.doctor.time }}</p>
+                        <p><strong>Cliente: </strong>{{ cita.name_patient }}</p>                
+                        
+                        <div style="display: flex; gap: 10px;">
+                            <!-- Botón para eliminar cita -->
+                            <form method="POST" action="{% url 'eliminar_cita' cita.id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger">Eliminar cita</button>
+                            </form>
+
+                            <!-- Botón para editar cita -->
+                            <form method="POST" action="{% url 'editar_cita' cita.id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-primary">Editar cita</button>
+                            </form>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div> 
+    </div>
+</body>
+</html>

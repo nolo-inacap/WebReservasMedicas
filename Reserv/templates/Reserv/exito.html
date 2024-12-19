@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reserva Exitosa</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/stylesExito.css' %}">
+
+</head>
+<body>
+    <div class="container">
+        <h1>¡Reserva realizada con éxito!</h1>
+        <p>Has reservado una cita con {{ doctor.name }} ({{ doctor.especialidad }}).</p>
+        <p>Cliente: {{ nombre_cliente }}</p>
+        <p><a href="{% url 'home' %}">Volver al inicio</a></p>
+        <a href="{% url 'mis_citas' %}">Mis Citas</a>
+    </div>
+</body>
+</html>

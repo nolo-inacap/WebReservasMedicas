@@ -1,0 +1,117 @@
+{% block content %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 20px;
+    }
+
+    .section-title {
+        font-weight: bold;
+        color: #34495e;
+        margin-bottom: 10px;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 5px;
+    }
+
+    .info p {
+        margin: 5px 0;
+        color: #555;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #2c3e50;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .btn {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .btn-cancel {
+        background-color: #e74c3c;
+        color: white;
+    }
+
+    .btn-cancel:hover {
+        background-color: #c0392b;
+    }
+
+    .btn-save {
+        background-color: #3498db;
+        color: white;
+    }
+
+    .btn-save:hover {
+        background-color: #2980b9;
+    }
+</style>
+
+<div class="container">
+    <h2>Editar Cita Médica</h2>
+
+    <div class="info">
+        <h3 class="section-title">Información del Doctor</h3>
+        <p><strong>Nombre:</strong> {{ doctor.name }}</p>
+        <p><strong>Especialidad:</strong> {{ doctor.specialty }}</p>
+    </div>
+
+    <form method="POST">
+        {% csrf_token %}
+        
+        <label for="nombre">Nombre del Paciente</label>
+        <input type="text" name="nombre" id="nombre" value="{{ appointment.name_patient }}" required>
+        
+        <label for="rut">RUT</label>
+        <input type="text" name="rut" id="rut" value="{{ appointment.rut_patient }}" required>
+        
+        <label for="telefono">Teléfono</label>
+        <input type="tel" name="telefono" id="telefono" value="{{ appointment.phone_patient }}" required>
+        
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" value="{{ appointment.email_patient }}" required>
+        
+        <div class="buttons">
+            <a href="{% url 'mis_citas' %}" class="btn btn-cancel">Cancelar</a>
+            <button type="submit" class="btn btn-save">Guardar Cambios</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

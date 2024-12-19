@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/stylesHome.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Clínica</h1>
+        <nav>
+            <a href="{% url 'logout' %}">Logout</a>
+            <a href="{% url 'mis_citas' %}">Mis Citas</a>
+        </nav>
+    </header>
+
+    <!-- Mensaje de bienvenida -->
+    <div class="welcome-message">
+        <h2>Bienvenido {{ user.username }}</h2>
+    </div>
+
+    <!-- Contenedor de Doctores -->
+    <div class="container">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+            {% for doctor in Doctors %}
+                <div class="doctor-card">
+                    <!-- Mostrar la imagen del doctor -->
+                    <img src="{{ doctor.picture }}" alt="Foto de {{ doctor.name }}" class="doctor-image">
+                    <h3>{{ doctor.name }}</h3>
+                    <p><strong>Especialidad:</strong> {{ doctor.special }}</p>
+                    <p><strong>Horario:</strong> {{ doctor.time }}</p>
+                    <p><strong>Calificación:</strong> 
+                        {% if doctor.rating %}
+                            {{ doctor.rating }} / 5
+                        {% else %}
+                            No disponible
+                        {% endif %}
+                    </p>
+                    <p>{{ doctor.description }}</p>
+                    <a href="{% url 'reserve' doctor.id %}">Reservar con {{ doctor.name }}</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
